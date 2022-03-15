@@ -1,0 +1,16 @@
+<div *ngIf="post$ | async as post; else loading" class="post">
+  <div class="header">
+    <h1>{{post.title}}</h1>
+    <button routerLink="/" class="btn btn-light">На главную</button>
+  </div>
+  <div class="info">
+    <strong>{{post.author}}</strong>
+    <small>{{post.date | date:'dd.MM.yyyy'}}</small>
+  </div>
+  <div>
+    <p>{{post.text}}</p>
+  </div>
+</div>
+<ng-template #loading>
+  <p>Загрузка...</p>
+</ng-template>
